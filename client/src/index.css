@@ -11,3 +11,455 @@ code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
+
+/* Nav Bar Styling*/
+
+.nav{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  position:fixed;
+  width: 100%;
+  background-color: #0067A7;
+  color: white;
+  box-shadow: 0 2px 2px 3px rgba(0,0,0,.1);
+}
+
+.navlogo{
+  display: flex;
+  flex-direction: row;
+  padding: 10px 5%;
+}
+
+.navmenu a{
+  padding: 0 10px;
+  color: white;
+}
+
+.navmenu{
+  padding: 0 5%;
+}
+
+.nav button{
+  color: white;
+  border: 1px solid white;
+}
+
+.nav button:hover{
+  color: black;
+  background-color: white;
+  border-color: white;
+}
+
+
+button, input[type = "button"]{
+  font-size: 12px;
+  height: 40px;
+  padding: 0px 30px;
+  border-radius: 25px;
+  border: 1px solid darkgray;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+button:hover{
+  background-color: #D99800;
+  border-color: #D99800;
+}
+
+/* Home Page Styling*/
+.storeimage{
+  width: 100%;
+}
+.info{
+  display: flex;
+  flex-direction: row; 
+  justify-content: space-around;
+  align-items: center;
+  padding: 0 10%;
+}
+.info section{
+  width: 50%;
+  padding: 8% 5%;
+  
+}
+
+.info a{
+  width: 50%;
+  padding: 8% 5%;
+  
+}
+
+.heading{
+  font-size: 32px;
+}
+
+.number{
+font-size: 42px;
+}
+
+.hours{
+  text-align: center;
+  background-color: #EEE5DA;
+}
+
+.resourcehome{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 8% 10%;
+}
+
+.cardinfo {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.cardinfo svg{
+  font-size: 42px;
+  padding-right: 5%;
+}
+
+
+/* Footer Styling*/
+
+footer{
+  background-color: #0067A7;
+  color: white;
+  padding: 10px 10%;
+}
+.footerinfo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
+
+.footerlogos{
+  display: flex;
+  align-items: center;
+}
+
+.footerlogos svg{
+  color: #D99800;
+  padding-right: 10px;
+  font-size: 12px
+}
+
+.footer h1{
+  font-size: 14px;
+}
+
+.footer p{
+  font-size: 12px;
+}
+
+.footer a{
+  color: white;
+  font-size: 12px;
+  text-decoration-line: none;
+}
+
+/*Resource Page Styling */
+
+.resources{
+  padding: 150px 10% 125px 10%;
+}
+
+.resources h1{
+  font-size: 42px;
+}
+
+
+/*Contact Page Styling*/
+
+.contact{
+  text-align: center;
+  padding: 150px 10% 125px 10%;
+}
+
+.form-container{
+  display: flex;
+  flex-direction: column;
+  padding: 15px 20%;
+  text-align: left;
+}
+
+input{
+  padding-left:30px;
+	margin: 10px 0px;
+	height: 50px;
+	border-style: solid;
+	border-radius: 10px;
+	border-width: 1px;
+	border-color: #AAA8A8;
+	font-size: 15px;
+}
+
+textarea{
+  padding:10px 10px;
+  resize: none;
+  margin: 10px 0px 30px 0px;
+  height: 200px;
+  border-radius: 10px;
+	border-width: 1px;
+	border-color: #AAA8A8;
+	font-size: 15px;
+}
+
+.developers{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Order Page Styling*/
+
+.orders{
+  padding: 150px 10% 125px 10%;
+}
+
+.orders input[type = "number"]{
+  padding: 0px;
+  border-radius: 2px;
+  margin: 0px 10px 0 2px;
+  height: 30px;
+}
+
+.orders .item-container{
+  display: flex;
+  justify-content: space-evenly;
+  flex-wrap: wrap;
+  
+}
+
+.orders .items{
+  border: 1px solid rgb(200, 197, 197);
+  margin-top: 10px;
+  width: 275px;
+  height: 275px;
+  text-align: center;
+}
+
+.alert{
+  display: flex;
+  justify-content: center;
+  position: fixed;
+  width: 100%;
+  top: 125px;
+}
+
+.alert span{
+  background-color: rgba(199, 218, 179, 0.7);
+  padding: 20px;
+  border-radius: 30px;
+  animation: fadeOut 5s forwards;
+}
+
+@keyframes fadeOut{
+  0%{opacity: 1;}
+  75%{opacity: 1;}
+  100%{opacity: 0;}
+}
+
+.catFilter{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.catFilter input[type = "radio"]{
+  position: absolute;
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.catFilter input:checked + span {
+  background-color: #000;
+  color: #fff;
+}
+
+
+.catFilter span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 12px;
+  height: 40px;
+  padding: 0px 30px;
+  border-radius: 25px;
+  border: 1px solid darkgray;
+  background-color: rgba(0, 0, 0, 0);
+  cursor: pointer;
+}
+
+
+
+/* Profile Page Styling*/
+
+.profile{
+  padding: 200px 10% 125px 10%;
+}
+
+.profile .info-container{
+  display: flex;
+  
+}
+
+.info-container .image{
+  width: 30%;
+  text-align: center;
+  padding-right: 10%;
+
+}
+
+.info-container .image img{
+  border-radius: 100px;
+}
+
+.profileinfo{
+  
+  width: 60%;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+}
+
+.profileinfo p{
+background-color: rgb(238, 236, 236);
+padding: 10px;
+border-radius: 5px;
+}
+
+
+/* Cart Page Styling*/
+
+.cart{
+  padding: 150px 10% 125px 10%;
+  
+}
+
+.cart-container{
+  display: flex;
+  width: 100%;
+
+}
+
+.cart-items{
+  margin-right: 10%;
+  width: 100%;
+}
+
+.cart-items .header{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.cart-items .header svg{
+  font-size: 26px;
+  margin-right: 10px;
+}
+
+
+
+.cart-items .items{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+}
+
+
+
+
+.cart-items img{
+  width: 75px;
+}
+
+
+/*SignUp Page*/
+.sign-container{
+  text-align: center;
+  padding: 150px 10% 125px 10%;
+}
+
+.status{
+  color: red;
+}
+
+/*SignIn Page*/
+
+.signin{
+  text-align: center;
+  padding: 150px 10% 125px 10%;
+}
+
+.error-message{
+  color: red;
+}
+
+/*Previous Orders page*/
+
+.prevOrders{
+  text-align: center;
+  padding: 150px 10% 125px 10%;
+}
+
+.prevOrders .items{
+  border: solid 1px rgb(226, 226, 226);
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+/*Employee Portal page*/
+
+.employee-container{
+  text-align: center;
+  padding: 150px 10% 125px 10%;
+
+}
+
+.employee-container .productForm{
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+
+}
+
+.pendingOrder{
+  display: flex;
+}
+
+.uforderList{
+  text-align: left;
+  list-style: none;
+}
+
+.uforderList li{
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  border: solid 1px rgb(220, 220, 220);
+}
+
+.uforderList li p{
+  display: flex;
+  padding-right: 5px;
+}
+
+
+.fulOrders{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  border: solid 1px rgb(220, 220, 220);
+  padding: 10px 0px;
+}
+
+.fulOrdersItem{
+display: flex;
+flex-direction: row;
+}
+
