@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faCircleXmark } from "@fortawesome/free-solid-svg-icons";
 
 export default function Item({ item }, { index }) {
   const [qty, setQty] = useState(0);
@@ -54,26 +56,29 @@ export default function Item({ item }, { index }) {
   function Popup({ item }) {
     return (
       <div className="popup">
-        <img src={item.image_url} alt="product image"></img>
-        <div>
-          <h1>{item.name}</h1>
-          <p>In Stock: {item.quantity}</p>
-          <label>Qty:</label>
-          <input
-            type="number"
-            min="1"
-            className="quantity"
-            max={item.quantity}
-            value={item.quantitySelected}
-            onChange={(e) => handleQuantityChange(e, index)}
-          />
-          <button onClick={() => handleAdd(item)}>Add to Cart</button>
-          <h2>Description</h2>
-          <p>Description of Item here!</p>
-          <h3>Allergy</h3>
-          <p>{item.allergy}</p>
-          <h3>Category</h3>
-          <p>{item.category}</p>
+        <FontAwesomeIcon icon={faCircleXmark} />
+        <div className = "popupinfo">
+          <img src={item.image_url} alt="product image"></img>
+          <div>
+            <h1>{item.name}</h1>
+            <p>In Stock: {item.quantity}</p>
+            <label>Qty:</label>
+            <input
+              type="number"
+              min="1"
+              className="quantity"
+              max={item.quantity}
+              value={item.quantitySelected}
+              onChange={(e) => handleQuantityChange(e, index)}
+            />
+            <button onClick={() => handleAdd(item)}>Add to Cart</button>
+            <h2>Description</h2>
+            <p>Description of Item here!</p>
+            <h3>Allergy</h3>
+            <p>{item.allergy}</p>
+            <h3>Category</h3>
+            <p>{item.category}</p>
+          </div>
         </div>
       </div>
     );
