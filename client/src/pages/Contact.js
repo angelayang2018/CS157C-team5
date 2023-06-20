@@ -38,16 +38,6 @@ export default function Contact() {
             alt="logo"
             border="0"
           ></img>
-          <h3>Gini Lo</h3>
-          <p>gini.lo@sjsu.edu</p>
-        </div>
-
-        <div className="dev">
-          <img
-            src="https://i.ibb.co/Mc6LfDh/logo.png"
-            alt="logo"
-            border="0"
-          ></img>
           <h3>Barnabas Yuen</h3>
           <p>barnabas.yuen@sjsu.edu</p>
         </div>

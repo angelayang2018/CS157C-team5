@@ -1,10 +1,12 @@
 import React, { useState, useEffect } from "react";
+import Item from "../component/Item";
 
 
 export default function Orders() {
   const [data, setData] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("");
   const [qty, setQty] = useState(0);
+  const [popularList, setPopularList] = useState([]);
 
   useEffect(() => {
     fetchData();
@@ -24,50 +26,7 @@ export default function Orders() {
     }
   };
 
-  const handleAdd = async (item) => {
-    if (qty > 0) {
-      setShowAlert(item);
-      setTimeout(() => {
-        setShowAlert(false);
-      }, 5000);
-      item["qty"] = qty;
-      try {
-        await fetch("http://localhost:5000/cart/add", {
-          credentials: "include",
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json", // Specify the content type as JSON
-          },
-          body: JSON.stringify(item),
-        }).then(async (response) => {
-          item.quantity -= qty;
-          console.log(item.quantity)
-          console.log("adding item");
-        });
-      } catch (error) {
-        console.error("Error posting data:", error);
-      }
-    }
-  };
-
-  const handleQuantityChange = (e, index) => {
-    const newQuantity = parseInt(e.target.value, 10) || 0; // Parse the input value as an integer or default to 0
-    const selectedItem = data[index];
-
-    if (newQuantity > selectedItem.quantity) {
-      console.log("Tried to input a number greater than In stock quantity.");
-      setQty(0);
-    } else if (newQuantity < 1) {
-      setQty(0);
-      console.log("Tried to input a number less than In stock quantity.");
-    } else {
-      setQty(newQuantity);
-    }
-  };
-
-  const [showAlert, setShowAlert] = useState(null);
-
-  const [popularList, setPopularList] = useState([]);
+  
 
   useEffect(() => {
     (async () => {
@@ -103,34 +62,12 @@ export default function Orders() {
 
   return (
     <div>
-      {showAlert && (
-        <div className="alert">
-          <span>
-            You added {showAlert.qty} {showAlert.name} to your cart.{" "}
-          </span>
-        </div>
-      )}
       <div className="orders">
-        <h1>Orders</h1>
         <h2>Popular Items</h2>
         {popularList ? (
           <div className="item-container">
             {popularList.map((item, index) => (
-              <div className="items" key={index}>
-                <p>{item.name}</p>
-                <img src={item.image_url} alt="item"></img>
-                <p>In Stock: {item.quantity}</p>
-                <label htmlFor="quantity">Qty:</label>
-                <input
-                  type="number"
-                  min="1"
-                  className="quantity"
-                  max={item.quantity}
-                  value={item.quantitySelected}
-                  onChange={(e) => handleQuantityChange(e, index)}
-                />
-                <button onClick={() => handleAdd(item)}>Add to Cart</button>
-              </div>
+              <Item item = {item} index = {index}></Item>
             ))}
           </div>
         ) : (
@@ -164,21 +101,7 @@ export default function Orders() {
         {data ? (
           <div className="item-container">
             {data.map((item, index) => (
-              <div className="items" key={index}>
-                <p>{item.name}</p>
-                <img src={item.image_url} alt="item"></img>
-                <p>In Stock: {item.quantity}</p>
-                <label htmlFor="quantity">Qty:</label>
-                <input
-                  type="number"
-                  min = "1"
-                  className="quantity"
-                  max = {item.quantity}
-                  value={item.quantitySelected}
-                  onChange={(e) => handleQuantityChange(e, index)}
-                />
-                <button onClick={() => handleAdd(item)}>Add to Cart</button>
-              </div>
+              <Item item = {item} index = {index}></Item>
             ))}
           </div>
         ) : (
