@@ -10,9 +10,11 @@ import SignUp from "./pages/Signup";
 import SignIn from "./pages/Signin";
 import PreviousOrders from "./pages/PreviousOrders";
 import EmployeePortal from "./pages/EmployeePortal";
+import EmployeeSignIn from "./pages/EmployeeSignIn";
+import Helpout from "./pages/Helpout";
 import {Route, Routes} from "react-router-dom";
 import './App.css';
-import EmployeeSignIn from "./pages/EmployeeSignIn";
+
 
 function App() {
   return (
@@ -30,7 +32,7 @@ function App() {
         <Route path = "/PreviousOrders" element = {<PreviousOrders/>} />
         <Route path = "/EmployeePortal" element = {<EmployeePortal/>} />
         <Route path = "/EmployeeSignIn" element = {<EmployeeSignIn/>} />
-
+        <Route path = "/Helpout" element = {<Helpout />} />
       </Routes>
       <Footer />
     </div>
