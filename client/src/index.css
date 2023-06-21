@@ -23,6 +23,7 @@ code {
   background-color: #0067A7;
   color: white;
   box-shadow: 0 2px 2px 3px rgba(0,0,0,.1);
+  z-index: 2;
 }
 
 .navlogo{
@@ -138,6 +139,42 @@ font-size: 42px;
   width: 250px;
 }
 
+.help{
+  display:flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.helpimg img{
+  width: 400px;
+  border-radius: 25px;
+  margin: 50px;
+}
+
+.helpimg{
+  display: flex;
+  z-index: -1;
+}
+
+.helpcontainer{
+  display: flex;
+  position: relative;
+}
+
+.helpcontainer h2{
+  position: absolute;
+  top: 45px;
+  left: 90px;
+  color: white;
+  font-size: 36px;
+  
+}
+
+.newstories{
+  display:flex;
+  justify-content: center;
+}
+
 
 /* Footer Styling*/
 
@@ -145,6 +182,10 @@ footer{
   background-color: #0067A7;
   color: white;
   padding: 10px 10%;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 .footerinfo{
   display: flex;
@@ -242,6 +283,42 @@ textarea{
   height: 30px;
 }
 
+.search{
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+}
+
+.search input{
+  padding-left: 50px;
+  width: 65%;
+  border-radius: 25px;
+}
+
+
+.search button{
+  position: absolute;
+  right: 16%;
+  top: 50%;
+  transform: translate(0%, -50%);
+  background-color: #0067A7;
+  color: white;
+  border-color: #0067A7;
+}
+
+.search button:hover{
+  background-color: #0274bb;
+  border-color: #0274bb;
+}
+
+.search svg{
+  position: absolute;
+  left: 17%;
+  top: 50%;
+  transform: translate(0%, -50%);
+}
+
 .orders .item-container{
   display: flex;
   justify-content: space-evenly;
@@ -251,6 +328,7 @@ textarea{
 
 .orders .items{
   border: 1px solid rgb(200, 197, 197);
+  border-radius: 2px;
   margin-top: 10px;
   width: 275px;
   height: 275px;
@@ -490,8 +568,8 @@ flex-direction: row;
 /*Popup*/
 
 .popup{
-  
-  border: 1px solid black;
+  border: 0.5px solid rgb(200, 197, 197);
+  border-radius: 2px;;
   background-color: white;
   position: fixed;
   top: 50%;
@@ -503,16 +581,29 @@ flex-direction: row;
   align-items: center;
 }
 
+.popup svg{
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  height: 30px;
+}
+
+.popup svg:hover{
+  color: #D99800;
+}
+
 .popupinfo{
   display: flex;
   width: 100%;
-  justify-content: center;;
-  
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
 }
 
 .popup img{
   width: 150px;
   height: 150px;
+  margin-right: 20px;
 }
 
 

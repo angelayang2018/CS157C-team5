@@ -49,31 +49,34 @@ export default function Item({ item }, { index }) {
   };
 
   const handlePopupToggle = () => {
-    console.log("hi");
     setShowPopup(!showPopup);
   };
 
   function Popup({ item }) {
     return (
       <div className="popup">
-        <FontAwesomeIcon icon={faCircleXmark} />
-        <div className = "popupinfo">
+        <FontAwesomeIcon onClick={handlePopupToggle} icon={faCircleXmark} />
+        <div className="popupinfo">
           <img src={item.image_url} alt="product image"></img>
           <div>
             <h1>{item.name}</h1>
             <p>In Stock: {item.quantity}</p>
-            <label>Qty:</label>
-            <input
-              type="number"
-              min="1"
-              className="quantity"
-              max={item.quantity}
-              value={item.quantitySelected}
-              onChange={(e) => handleQuantityChange(e, index)}
-            />
-            <button onClick={() => handleAdd(item)}>Add to Cart</button>
+            {item.quantity > 0 && (
+              <div>
+                <label>Qty:</label>
+                <input
+                  type="number"
+                  min="1"
+                  className="quantity"
+                  max={item.quantity}
+                  value={item.quantitySelected}
+                  onChange={(e) => handleQuantityChange(e, index)}
+                />
+                <button onClick={() => handleAdd(item)}>Add to Cart</button>
+              </div>
+            )}
             <h2>Description</h2>
-            <p>Description of Item here!</p>
+            <p>{item.description}</p>
             <h3>Allergy</h3>
             <p>{item.allergy}</p>
             <h3>Category</h3>
@@ -98,16 +101,21 @@ export default function Item({ item }, { index }) {
         <img src={item.image_url} alt="item"></img>
         <p>In Stock: {item.quantity}</p>
       </div>
-      <label>Qty:</label>
-      <input
-        type="number"
-        min="1"
-        className="quantity"
-        max={item.quantity}
-        value={item.quantitySelected}
-        onChange={(e) => handleQuantityChange(e, index)}
-      />
-      <button onClick={() => handleAdd(item)}>Add to Cart</button>
+      {item.quantity > 0 && (
+        <div>
+          <label>Qty:</label>
+          <input
+            type="number"
+            min="1"
+            className="quantity"
+            max={item.quantity}
+            value={item.quantitySelected}
+            onChange={(e) => handleQuantityChange(e, index)}
+          />
+          <button onClick={() => handleAdd(item)}>Add to Cart</button>
+        </div>
+      )}
+
       {showPopup && <Popup item={item} />}
     </div>
   );

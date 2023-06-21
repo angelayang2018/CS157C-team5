@@ -5,9 +5,9 @@ import {
   faShoppingBasket,
   faNewspaper,
   faQuestion,
+  faHandHoldingDollar,
+  faHandshakeAngle
 } from "@fortawesome/free-solid-svg-icons";
-
-
 
 export default function Home() {
   return (
@@ -157,22 +157,42 @@ export default function Home() {
         </Link>
       </div>
 
-      <div>
+      <div className="newstories">
         <h2>News Stories</h2>
       </div>
 
-      <div className = "instagramPictures">
-        <h1>Join our team of volunteers or become a donator!</h1>
-
-        <div className = "imageList">
-          {itemData.map((item) => (
-            <a href = "https://www.instagram.com/sjsucaresbasicneeds/">
+      <div className="help">
+        <h2>We Need Your Help</h2>
+        <div className="helpimg">
+          <div className = "helpcontainer">
             <img
-              src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
-              srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
-              alt={item.title}
-              loading="lazy"
+              src="https://i.ibb.co/qp8JKkP/pantrydonate.jpg"
+              alt="pantrydonate"
             />
+            <h2><FontAwesomeIcon icon={faHandshakeAngle} /> Volunteer</h2>
+          </div>
+          <div className = "helpcontainer">
+            <img
+              src="https://i.ibb.co/VYyfZXx/pantryopening.jpg"
+              alt="pantryopening"
+            />
+            <h2><FontAwesomeIcon icon={faHandHoldingDollar} /> Donate</h2>
+          </div>
+        </div>
+      </div>
+
+      <div className="instagramPictures">
+        <h2>Join our team of volunteers or become a donator!</h2>
+
+        <div className="imageList">
+          {itemData.map((item) => (
+            <a href="https://www.instagram.com/sjsucaresbasicneeds/">
+              <img
+                src={`${item.img}?w=164&h=164&fit=crop&auto=format`}
+                srcSet={`${item.img}?w=164&h=164&fit=crop&auto=format&dpr=2 2x`}
+                alt={item.title}
+                loading="lazy"
+              />
             </a>
           ))}
         </div>

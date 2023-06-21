@@ -16,11 +16,13 @@ export default function Navbar() {
             border="0"
           ></img>
         </Link>
-        <h1>Spartan Pantry</h1>
       </div>
       <div className="navmenu">
         <Link to="/Orders">
           <button>Orders</button>
+        </Link>
+        <Link to="/Helpout">
+          <button>Help out</button>
         </Link>
         <Link to="/Resources">
           <button>Resources</button>

@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import Item from "../component/Item";
-
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 
 export default function Orders() {
   const [data, setData] = useState(null);
@@ -25,8 +26,6 @@ export default function Orders() {
       console.error("There was an error:", error);
     }
   };
-
-  
 
   useEffect(() => {
     (async () => {
@@ -61,13 +60,19 @@ export default function Orders() {
   };
 
   return (
-    <div>
+
       <div className="orders">
+        <div className="search">
+         <FontAwesomeIcon icon = {faMagnifyingGlass} />
+          <input placeholder="Search products" />
+          <button type = "submit">Search</button>
+
+        </div>
         <h2>Popular Items</h2>
         {popularList ? (
           <div className="item-container">
             {popularList.map((item, index) => (
-              <Item item = {item} index = {index}></Item>
+              <Item item={item} index={index}></Item>
             ))}
           </div>
         ) : (
@@ -101,13 +106,12 @@ export default function Orders() {
         {data ? (
           <div className="item-container">
             {data.map((item, index) => (
-              <Item item = {item} index = {index}></Item>
+              <Item item={item} index={index}></Item>
             ))}
           </div>
         ) : (
           <p>Loading data...</p>
         )}
       </div>
-    </div>
   );
 }
